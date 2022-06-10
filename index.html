@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Web Storage</title>
+</head>
+<h1>Formulario Web Local Storage</h1>
+
+<body>
+    <form>
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label for="mensaje">Mensaje:</label><br>
+        <input type="text" id="mensaje" name="mensaje"><br>
+        <label for="urlimagen">URL:</label><br>
+        <input type="url" id="url" name="url"><br>
+        <input type="button" id="button" value="Enviar" onclick="guardarDatos()">       
+    </form>
+
+</body>
+
+<script>
+    function guardarDatos() {
+        var nombre = document.getElementById("nombre").value;
+        var email = document.getElementById("email").value;
+        var mensaje = document.getElementById("mensaje").value;
+        var url = document.getElementById("url").value;
+    };
+    localStorage.setItem("nombre", nombre, JSON.stringify(nombre));
+    localStorage.setItem("email", email, JSON.stringify(email));
+    localStorage.setItem("mensaje", mensaje, JSON.stringify(mensaje));
+    localStorage.setItem("url", url, JSON.stringify(url));
+
+
+    var devolverDatos = localStorage.getItem("nombre,email,mensaje,url");
+
+</script>
+
+</html>
